@@ -7,12 +7,22 @@ format = """$directory\
             $git_staus\
             $fill\
             $cmd_duration\
+            $jobs\
             \n$character"""
-# palette = "catppuccin_mocha"  
+palette = "custom"
+
+[jobs]
+symbol = 'x'
+format = '[$symbol]($style)'
 
 [directory]
+style = 'bold fg:dark_blue'
 truncation_length = 8
 truncation_symbol = '.../'
 
+[fill]
+symbol = ' '
 
+[palettes.custom]
+dark_blue = '#5E81AC'
 
