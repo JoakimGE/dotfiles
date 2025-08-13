@@ -1,0 +1,18 @@
+
+add_newline = false 
+
+# A minimal left prompt
+format = """$directory\
+            $git_branch\
+            $git_staus\
+            $fill\
+            $cmd_duration\
+            \n$character"""
+# palette = "catppuccin_mocha"  
+
+[directory]
+truncation_length = 8
+truncation_symbol = '.../'
+
+
+
