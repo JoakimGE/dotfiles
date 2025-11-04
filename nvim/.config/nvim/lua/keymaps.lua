@@ -47,6 +47,14 @@ k('n', '<C-Up>', '<Nop>', opts)
 k('n', '<C-Down>', '<Nop>', opts)
 k('n', '<C-Left>', '<Nop>', opts)
 k('n', '<C-Right>', '<Nop>', opts)
+k('i', '<S-Up>', '<Nop>', opts)
+k('i', '<S-Down>', '<Nop>', opts)
+k('i', '<S-Left>', '<Nop>', opts)
+k('i', '<S-Right>', '<Nop>', opts)
+k('n', '<S-Up>', '<Nop>', opts)
+k('n', '<S-Down>', '<Nop>', opts)
+k('n', '<S-Left>', '<Nop>', opts)
+k('n', '<S-Right>', '<Nop>', opts)
 
 
 -- LSP Keymaps
@@ -62,7 +70,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("n", "gr", vim.lsp.buf.references)
     map("n", "gi", vim.lsp.buf.implementation)
     map("n", "K", vim.lsp.buf.hover)
+    map("n", "gq", vim.diagnostic.open_float)
     map("n", "<leader>rn", vim.lsp.buf.rename)
+    map("n", "<leader>ca", vim.lsp.buf.code_action)
   end,
 })
 

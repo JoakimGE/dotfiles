@@ -1,8 +1,14 @@
 return {
-  "EdenEast/nightfox.nvim", -- Replace with the actual GitHub path if different
-  lazy = false,               -- Set to false to load on startup, or true if you want to load it only when needed
-  priority = 1000,            -- Colorschemes should generally have a high priority
+  "EdenEast/nightfox.nvim",
   config = function()
-    vim.cmd.colorscheme 'carbonfox'
+    require("nightfox").setup({
+      options = {
+        transparent = true,
+      },
+      -- You can specify a particular Nightfox variant here, e.g., "carbonfox"
+      theme = "carbonfox",
+    })
+    -- Load the colorscheme after setup
+    -- vim.cmd "colorscheme carbonfox" -- Or your chosen variant like "carbonfox"
   end,
 }

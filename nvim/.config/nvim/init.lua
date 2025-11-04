@@ -1,11 +1,13 @@
-
--- Setting leader key 
+-- Setting leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-require ("config.lazy")
+require("config.lazy")
 require "keymaps"
-require ("keymaps").setup()
+require("keymaps").setup()
 require "options"
+require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/snippets" })
+
+vim.cmd("colorscheme cyberdream")
 
 -- Auto-format on save using the active LSP
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -21,4 +23,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end
   end,
 })
-
