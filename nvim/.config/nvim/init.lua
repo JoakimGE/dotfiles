@@ -9,6 +9,16 @@ require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/snip
 
 vim.cmd("colorscheme cyberdream")
 
+-- Check if on NixOS, disable automatic_installation if true
+local on_nixos = vim.env.NIXOS == "true"
+
+if not on_nixos then
+  require("mason").setup()
+  require("mason-lspconfig").setup {
+    automatic_installation = true,
+  }
+end
+
 -- Auto-format on save using the active LSP
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true }),
