@@ -16,8 +16,14 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
 
+-- signature help with Ctrl+s
+vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { desc = "Signature help" })
+
 k("n", "<A-j>", ":m .+1<CR>==", opts) -- move line up(n)
 k("n", "<A-k>", ":m .-2<CR>==", opts) -- move line down(n)
+
+-- Vimtex
+k("n", "<leader>tc", ":VimtexCompile<CR>", opts)
 
 -- Visual
 k("v", "<", "<gv", opts)                  -- Code remains marked after indenting

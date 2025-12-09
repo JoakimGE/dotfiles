@@ -8,7 +8,7 @@
 @define-color purple #BE95FF;
 
 * {
-    font-family: JetBrainsMono Nerd Font,sans-serif;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 14px;
     border-radius: 0;
     border: none;
@@ -80,6 +80,7 @@ window#waybar.hidden {
 #backlight,
 #network,
 #custom-lock,
+#custom-notification,
 #battery {
     color: @fg;
     padding: 0 6px;
@@ -91,6 +92,7 @@ window#waybar.hidden {
 #backlight:hover,
 #network:hover,
 #custom-lock:hover,
+#custom-notification:hover,
 #battery:hover {
   background-color: rgb(41, 42, 53);
 }
@@ -99,6 +101,10 @@ window#waybar.hidden {
   margin-left: 0px; 
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
+}
+
+#custom-notification.notification{
+  color: #e78284;
 }
 
 #battery {

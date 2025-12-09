@@ -8,7 +8,7 @@
   
   ],
 
-  "modules-center": ["clock"],
+  "modules-center": ["clock", "custom/notification"],
 
   "modules-right": [
     "bluetooth",
@@ -40,21 +40,32 @@
     "tooltip-format-connected":"{device_enumerate}"
   },
 
-  "custom/music": {
-    "format": "  {}",
-    "escape": true,
-    "interval": 5,
-    "tooltip": false,
-    "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
-    "on-click": "playerctl play-pause",
-    "max-length": 50
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{0} {icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
 
   "clock": {
     "timezone": "Europe/Oslo",
     "tooltip": false,
     "format": "{:%H:%M  -  %A, %d}",
-    "interval": 1
+    "interval": 5
   },
 
   "network": {

@@ -1,5 +1,6 @@
 local o = vim.opt
 -- Global options
+o.winborder = 'rounded'
 o.backup = false
 o.clipboard = "unnamedplus"
 o.cmdheight = 1

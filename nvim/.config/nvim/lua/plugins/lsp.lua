@@ -1,26 +1,42 @@
+return -- lsp.lua or wherever
+{
+  "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = { "hrsh7th/cmp-nvim-lsp" },
+  config = function()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- lsp.lua
-return {
-  {
-    -- this module only sets global LSP defaults for all servers
-    "neovim/nvim-lspconfig",
-    event = "VeryLazy",
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      -- Global defaults for *all* LSP configs (new 0.11 API)
-      -- No touching lspconfig.setup anywhere.
-      vim.lsp.config("*", {
-        capabilities = capabilities,
-        on_attach = on_attach,
-        -- you can add flags/settings here that should apply to all servers
-      })
+    local on_attach = function(client, bufnr)
+      -- your keymaps etc
+    end
 
-      -- nicer diagnostics
-      vim.diagnostic.config({
-        virtual_text = true,
-        float = { border = "rounded" },
-        severity_sort = true,
-      })
-    end,
-  },
+    -- Global defaults for *all* servers
+    vim.lsp.config("*", {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- List the servers you want
+    local servers = {
+      "ts_ls", -- or "tsserver" if that’s what you use
+      "lua_ls",
+      "rust_analyzer",
+      "pyright",
+      "texlab",
+      "jdtls",
+      -- add more…
+    }
+
+    for _, server in ipairs(servers) do
+      -- extra per-server settings can go in the 2nd arg
+      vim.lsp.config(server, {})
+      vim.lsp.enable(server)
+    end
+
+    vim.diagnostic.config({
+      virtual_text = true,
+      float = { border = "rounded" },
+      severity_sort = true,
+    })
+  end,
 }
