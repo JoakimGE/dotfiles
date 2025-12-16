@@ -75,6 +75,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("n", "gd", vim.lsp.buf.definition)
     map("n", "gr", vim.lsp.buf.references)
     map("n", "gi", vim.lsp.buf.implementation)
+    map("n", "gD", vim.diagnostic.setqflist)
     map("n", "K", vim.lsp.buf.hover)
     map("n", "gq", vim.diagnostic.open_float)
     map("n", "<leader>rn", vim.lsp.buf.rename)
@@ -105,9 +106,6 @@ function M.setup()
   end)
   map("<leader><leader>", function()
     require("telescope.builtin").buffers()
-  end)
-  map("gD", function()
-    require("telescope.builtin").diagnostics()
   end)
 
   -- Harpoon

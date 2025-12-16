@@ -1,9 +1,8 @@
-
 -- lua/plugins/treesitter.lua
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",   -- updates parsers automatically
+    build = ":TSUpdate", -- updates parsers automatically
     event = { "BufReadPost", "BufNewFile" },
     opts = {
       ensure_installed = {
