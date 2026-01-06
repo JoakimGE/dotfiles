@@ -25,7 +25,6 @@ zinit light Aloxaf/fzf-tab
 autoload -U compinit && compinit
 
 # Keybindings
-bindkey '^j' autosuggest-accept
 bindkey '^N' history-search-forward
 bindkey '^P' history-search-backward
 
