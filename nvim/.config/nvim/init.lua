@@ -7,7 +7,7 @@ require("keymaps").setup()
 require "options"
 require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/lua/snippets" })
 
-vim.cmd("colorscheme cyberdream")
+-- vim.cmd("colorscheme cyberdream")
 
 -- Check if on NixOS, disable automatic_installation if true
 local on_nixos = vim.env.NIXOS == "true"
