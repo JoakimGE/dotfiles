@@ -25,6 +25,7 @@ return -- lsp.lua or wherever
       "pyright",
       "texlab",
       "jdtls",
+      "zls",
       -- add more…
     }
 
