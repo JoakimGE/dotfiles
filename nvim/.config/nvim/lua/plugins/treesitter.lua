@@ -8,7 +8,6 @@ return {
       ensure_installed = {
         "bash",
         "c",
-        "cpp",
         "css",
         "html",
         "javascript",
@@ -25,7 +24,6 @@ return {
         "typescript",
         "vim",
         "yaml",
-        "zig",
       },
       highlight = {
         enable = true,
@@ -46,18 +44,9 @@ return {
       autotag = { enable = true },
       -- You can add more modules here (like rainbow, context_commentstring, etc.)
     },
-    config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
-    end,
   },
 
   -- Optional: auto tag closing for HTML/TSX
   { "windwp/nvim-ts-autotag", event = "VeryLazy" },
 
-  -- Optional: Treesitter-based textobjects (more powerful motions)
-  {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    event = "VeryLazy",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
 }

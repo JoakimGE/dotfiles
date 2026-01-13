@@ -18,14 +18,6 @@ return -- lsp.lua or wherever
 
     -- List the servers you want
     local servers = {
-      "ts_ls", -- or "tsserver" if that’s what you use
-      "lua_ls",
-      "gopls",
-      "rust_analyzer",
-      "pyright",
-      "texlab",
-      "jdtls",
-      "zls",
       -- add more…
     }
 

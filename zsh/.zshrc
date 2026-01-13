@@ -48,6 +48,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
+alias n='nvim'
 alias wifi='nmcli dev wifi list'
 wific() {
   sudo nmcli dev wifi connect "$1" --ask
